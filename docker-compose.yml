@@ -5,12 +5,25 @@ services:
     ports:
       - 5555:5432
     environment:
-      - POSTGRES_DB=copart
-      - POSTGRES_PASSWORD=copart
-      - POSTGRES_USER=copart
+      - POSTGRES_DB=${POSTGRES_NAME}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_USER=${POSTGRES_USER}
       - PGDATA=/var/lib/postgresql/data/pgdata
     volumes:
       - db-data:/var/lib/postgresql/data/pgdata
+  app:
+      depends_on:
+          - db
+      image: protyom/copart-bot:app
+      restart: always
+      volumes:
+          - .:/app
+      env_file:
+          - .env
+      environment:
+          - C_FORCE_ROOT=true
+      tty: true
+      command: python3 /app/main.py
 volumes:
   db-data:
 

@@ -12,3 +12,8 @@ Copart has functionality of watching lot and getting an email if lot gets an auc
 /lot <lot_id> checks copart lot auction date.
 /watch <lot_id> will notify you when lot gets auction date 
 /unwatch <lot_id> will remove you from lot watch list.
+
+## Build
+
+
+docker build

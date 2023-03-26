@@ -8,7 +8,7 @@ from sqlalchemy.orm import sessionmaker
 
 POSTGRES_NAME = os.environ.get('POSTGRES_NAME', 'copart')
 POSTGRES_USER = os.environ.get('POSTGRES_USER', 'copart')
-POSTGRES_PASSWORD = os.environ.get('POSTGRES_USER', 'copart')
+POSTGRES_PASSWORD = os.environ.get('POSTGRES_PASSWORD', 'copart')
 POSTGRES_HOST = os.environ.get('POSTGRES_HOST', 'localhost')
 POSTGRES_PORT = os.environ.get('POSTGRES_PORT', '5555')
 
