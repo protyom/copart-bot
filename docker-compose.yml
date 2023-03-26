@@ -1,0 +1,16 @@
+version: '2'
+services:
+  db:
+    image: postgres:15
+    ports:
+      - 5555:5432
+    environment:
+      - POSTGRES_DB=copart
+      - POSTGRES_PASSWORD=copart
+      - POSTGRES_USER=copart
+      - PGDATA=/var/lib/postgresql/data/pgdata
+    volumes:
+      - db-data:/var/lib/postgresql/data/pgdata
+volumes:
+  db-data:
+
