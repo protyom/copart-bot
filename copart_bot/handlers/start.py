@@ -13,4 +13,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
                                              chat_id=update.effective_chat.id,
                                              name=update.effective_chat.effective_name)
     await context.bot.send_message(chat_id=update.effective_chat.id,
-                                   text="Hello! Send me /lot <lot_id> and I'll check lot info.")
+                                   text="Hello! Quick help:\n"
+                                        "/lot <lot_id> checks copart lot auction date.\n"
+                                        "/watch <lot_id> will notify you when lot gets auction date \n"
+                                        "/unwatch <lot_id> will remove you from lot watch list.")
